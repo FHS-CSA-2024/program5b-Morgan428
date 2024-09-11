@@ -7,14 +7,12 @@ public class Car{
     
     //set classespublic Car(String carName, int milesDriven, int gallonsUsed){}
     public Car(){
-        String name = carName;
-        double miles = milesDriven;
-        double gallons = gallonsUsed;
+        //
     }
-    public Car(String newName, double newMiles, double newGallons){
-        newName = carName;
-        newMiles = milesDriven;
-        newGallons = gallonsUsed;
+    public Car(String newName, double newMiles, double newGallons) {
+        carName = newName;  // Assign the parameter to the instance variable
+        milesDriven = newMiles;
+        gallonsUsed = newGallons;
     }
     public String getName(){
         return carName;
@@ -35,12 +33,13 @@ public class Car{
         gallonsUsed = newGallons;
     }
     public double calcAve(){
+        getName();
         double ave = milesDriven / gallonsUsed;
+        ave = Math.round(ave * 10) / 10.0;
         return ave;
     }
-    public String toString(){
-        String str = carName + "averaged" + (milesDriven / gallonsUsed);
-        return str;
+    public String toString() {
+        return carName + " averaged " + calcAve() + " m/g";
     }
     
 }
